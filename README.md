@@ -28,7 +28,7 @@ Số lượng các lá cùng chất trên tay sẽ cộng dồn hiệu ứng:
 
 ## Buff/Debuff phụ
 
-Nếu player hoặc enemy thua lượt đó, sẽ tính xem chất nào trên tay có số điểm cao nhất để gây buff/debuff cho turn sau:
+Nếu player hoặc enemy thua lượt đó, sẽ tính xem chất nào trên tay có số điểm cao nhất để gây buff cho bản thân/debuff cho đối phương ở turn sau:
 
 - Bích cao nhất: gây debuff Silent, nghĩa là sẽ không cộng dồn hiệu ứng lá bài.
 - Cơ cao nhất: gây debuff Slow, nghĩa là enemy sẽ đi trước.

@@ -33,6 +33,25 @@ namespace BlackJackFFLite.Domain.Cards
             return card;
         }
 
+        public bool TryDraw(Predicate<Card> predicate, out Card card)
+        {
+            if (predicate == null)
+                throw new ArgumentNullException(nameof(predicate));
+
+            for (int i = 0; i < _cards.Count; i++)
+            {
+                if (!predicate(_cards[i]))
+                    continue;
+
+                card = _cards[i];
+                _cards.RemoveAt(i);
+                return true;
+            }
+
+            card = default;
+            return false;
+        }
+
         public void Shuffle()
         {
             for (int i = _cards.Count - 1; i > 0; i--)

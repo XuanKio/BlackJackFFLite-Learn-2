@@ -1,4 +1,5 @@
 using BlackJackFFLite.Domain.Hands;
+using BlackJackFFLite.Domain.Statuses;
 
 namespace BlackJackFFLite.Domain.Characters
 {
@@ -14,6 +15,7 @@ namespace BlackJackFFLite.Domain.Characters
         public int BaseDamage { get; }
 
         public Hand Hand { get; }
+        public StatusCollection Statuses { get; }
 
         public bool IsDead => Hp <= 0;
 
@@ -24,6 +26,7 @@ namespace BlackJackFFLite.Domain.Characters
             Hp = maxHp;
             BaseDamage = baseDamage;
             Hand = new Hand();
+            Statuses = new StatusCollection();
         }
 
         public void TakeDamage(int damage)
@@ -85,6 +88,7 @@ namespace BlackJackFFLite.Domain.Characters
             Block = 0;
             Gold = 0;
             Hand.Clear();
+            Statuses.Clear();
         }
 
         public void ResetForNewRound()
